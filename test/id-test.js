@@ -8,35 +8,24 @@ const id = require('../');
 
 describe('ed25519-id', () => {
   it('should `stringify`', () => {
-    const key = Buffer.from('5Ft+lgiH59sQk83zaMD2iXXRx9W6LqtRBLm+IZ8/mtk=',
+    const key = Buffer.from('oJacfu2sBNiu/LKIRGaXuPsixNjj7gCoLo+DTkRIROM=',
                             'base64');
-    const str = id.stringify(key, 5);
-    assert.equal(str, '@botbk/6zKTUUZDiIvfZLwqaa3CcmdHTsus5HueWaglU78dyw');
+    const str = id.stringify(key, 4);
+    assert.equal(str, '@hype/FwfE6dwCnrevCrizqYtB+YaaXkD3znOPH+1JWrzT');
   });
 
   it('should `parse`', () => {
     const actual =
-        id.parse('@botbk/6zKTUUZDiIvfZLwqaa3CcmdHTsus5HueWaglU78dyw');
-    const key = Buffer.from('5Ft+lgiH59sQk83zaMD2iXXRx9W6LqtRBLm+IZ8/mtk=',
+        id.parse('@hype/FwfE6dwCnrevCrizqYtB+YaaXkD3znOPH+1JWrzT');
+    const key = Buffer.from('oJacfu2sBNiu/LKIRGaXuPsixNjj7gCoLo+DTkRIROM=',
                             'base64');
     assert.deepEqual(actual, key);
   });
 
-  it('should strict `generate`', () => {
-    const result = id.generate('ok', () => {
-      return {
-        publicKey: crypto.randomBytes(32)
-      };
-    });
-    const str = id.stringify(result.publicKey, 2);
-
-    assert(/^@ok\//.test(str));
-  });
-
-  it('should loose `generate`', () => {
+  it('should `generate`', () => {
     const result = id.generate('hype', () => {
       return { publicKey: crypto.randomBytes(32) };
-    }, true);
+    });
     const str = id.stringify(result.publicKey, 4);
 
     assert(/^@hype/.test(str));
