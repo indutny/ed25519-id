@@ -1,20 +1,20 @@
-# hyperid
+# ed25519-id
 
 Human-readable representation of [ed22519][0] public keys.
 
 ## Usage
 
 ```js
-const hyperid = require('hyperid');
+const id = require('ed25519-id');
 
 const key = Buffer.from(
     '2c927a6f3e25e57c2724344a493c1152dd62b931afc29fbfde1bfdf146732519',
     'hex');
-hyperid.stringify(key, 4); // 'hype/WqEJTB5pRmVs9dfaiuRYgOYEkmkOMXxI0vp8QIr2Sg'
+id.stringify(key, 4); // 'hype/WqEJTB5pRmVs9dfaiuRYgOYEkmkOMXxI0vp8QIr2Sg'
 
-hyperid.parse('hype/WqEJTB5pRmVs9dfaiuRYgOYEkmkOMXxI0vp8QIr2Sg'); // key
+id.parse('hype/WqEJTB5pRmVs9dfaiuRYgOYEkmkOMXxI0vp8QIr2Sg'); // key
 
-hyperid.generate('hype', () => genRandomKey().publicKey); // other key
+id.generate('hype', () => genRandomKey().publicKey); // other key
 ```
 
 ## LICENSE

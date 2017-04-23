@@ -6,7 +6,7 @@ const Buffer = require('buffer').Buffer;
 
 const id = require('../');
 
-describe('hyperid', () => {
+describe('ed25519-id', () => {
   it('should `stringify`', () => {
     const key = Buffer.from('5Ft+lgiH59sQk83zaMD2iXXRx9W6LqtRBLm+IZ8/mtk=',
                             'base64');

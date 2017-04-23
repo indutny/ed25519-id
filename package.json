@@ -1,5 +1,5 @@
 {
-  "name": "hyperid",
+  "name": "ed25519-id",
   "version": "1.0.0",
   "description": "Human readable representation of ed25519 public keys",
   "main": "lib/id.js",
