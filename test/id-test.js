@@ -23,15 +23,21 @@ describe('ed25519-id', () => {
   });
 
   it('should strict `generate`', () => {
-    const key = id.generate('ok', () => crypto.randomBytes(32));
-    const str = id.stringify(key, 2);
+    const result = id.generate('ok', () => {
+      return {
+        publicKey: crypto.randomBytes(32)
+      };
+    });
+    const str = id.stringify(result.publicKey, 2);
 
     assert(/^@ok\//.test(str));
   });
 
   it('should loose `generate`', () => {
-    const key = id.generate('hype', () => crypto.randomBytes(32), true);
-    const str = id.stringify(key, 4);
+    const result = id.generate('hype', () => {
+      return { publicKey: crypto.randomBytes(32) };
+    }, true);
+    const str = id.stringify(result.publicKey, 4);
 
     assert(/^@hype/.test(str));
   });

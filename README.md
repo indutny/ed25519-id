@@ -14,7 +14,9 @@ id.stringify(key, 4); // 'hype/WqEJTB5pRmVs9dfaiuRYgOYEkmkOMXxI0vp8QIr2Sg'
 
 id.parse('hype/WqEJTB5pRmVs9dfaiuRYgOYEkmkOMXxI0vp8QIr2Sg'); // key
 
-id.generate('hype', () => genRandomKey().publicKey); // other key
+const pair = id.generate('hype', () => genRandomKeyPair());
+// NOTE: `genRandomKeyPair()` must return { publicKey: ... }
+// `pair` is an intact result of `genRandomKeyPair()`
 ```
 
 ## LICENSE
