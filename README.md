@@ -8,11 +8,11 @@ Human-readable representation of [ed22519][0] public keys.
 const id = require('ed25519-id');
 
 const key = Buffer.from(
-    'oJacfu2sBNiu/LKIRGaXuPsixNjj7gCoLo+DTkRIROM=',
-    'hex');
-id.stringify(key, 4); // '@hype/FwfE6dwCnrevCrizqYtB+YaaXkD3znOPH+1JWrzT'
+    '1HCmj3BKjXwp2QnQHLh8jEIj90DY958Bov5m8uR8i6A=',
+    'base64');
+id.stringify(key); // '@wut/GjKU55qeaSh8spnuIrv+tocCNFUTekxaR46f2kw+'
 
-id.parse('@hype/FwfE6dwCnrevCrizqYtB+YaaXkD3znOPH+1JWrzT');  // key
+id.parse('@wut/GjKU55qeaSh8spnuIrv+tocCNFUTekxaR46f2kw+');  // key
 
 const pair = id.generate('hype', () => genRandomKeyPair());
 // NOTE: `genRandomKeyPair()` must return { publicKey: ... }
