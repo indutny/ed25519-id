@@ -1,12 +1,17 @@
 {
   "name": "ed25519-id",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Human readable representation of ed25519 public keys",
   "main": "lib/id.js",
   "scripts": {
     "test": "mocha --reporter=spec --timeout=60000 test/*-test.js"
   },
-  "keywords": [ "ed25519", "human", "readable", "id" ],
+  "keywords": [
+    "ed25519",
+    "human",
+    "readable",
+    "id"
+  ],
   "author": "Fedor Indutny <fedor@indutny.com> (http://darksi.de/)",
   "license": "MIT",
   "devDependencies": {
